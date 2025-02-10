@@ -142,7 +142,7 @@ def cook_note(data):
     )
     html = html.replace(   # hard code for now
         'TEMPLATE_WIDTH',
-        '.markdown-preview-sizer.markdown-preview-section { max-width: 630px !important; margin: 0 auto; }'
+        '.markdown-preview-sizer.markdown-preview-section { max-width: 1080px !important; margin: 0 auto; }'
     )
     html = html.replace(
         'TEMPLATE_CSS',
