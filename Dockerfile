@@ -9,9 +9,14 @@ WORKDIR /sharenote-py
 COPY --from=builder /root/.local /root/.local
 
 COPY main.py gunicorn.conf.py ./
-COPY assets/ ./assets
-COPY conf/ ./conf
+COPY assets/ assets/
+
+COPY conf/ /defaults/conf/
+RUN mkdir -p /app/conf
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 ENV PATH="/root/.local/bin:${PATH}"
 
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["gunicorn", "main:flask_app"]
