@@ -9,8 +9,8 @@ WORKDIR /sharenote-py
 COPY --from=builder /root/.local /root/.local
 
 COPY main.py gunicorn.conf.py ./
-COPY assets/ assets/
-COPY conf/ conf/
+COPY assets/ ./assets
+COPY conf/ ./conf
 
 ENV PATH="/root/.local/bin:${PATH}"
 
