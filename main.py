@@ -12,7 +12,7 @@ import re
 import hashlib
 import glob
 
-import conf.settings
+from conf import settings
 
 if not settings.SERVER_URL:
     logging.error('Setting SERVER_URL unset, please edit settings.py')
